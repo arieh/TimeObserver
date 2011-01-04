@@ -1,0 +1,44 @@
+Class: TimeObserver {#TimeObserver}
+=======================
+
+TimeObserver Method: constructor {#TimeObserver:constructor}
+----------------------------------------------
+
+### Syntax
+	var to = new TimeObserver();
+
+TimeObserver Method: start {#TimeObserver:start}
+----------------------------------------------
+Starts the timer.
+
+### Syntax
+    to.start();
+    
+
+TimeObserver Method: stop {#TimeObserver:stop}
+----------------------------------------------
+Stops the timer.
+
+### Syntax
+    to.stop();
+
+TimeObserver Method: addTime {#TimeObserver:addTime}
+----------------------------------------------
+Adds a time to listen for
+
+### Syntax
+    to.addTime(time,cb);
+    
+### Arguments
+1. time - (mixed) either a Date or a timestamp of the wanted time
+2. cb - (Function) a callback function to call when the time has passed
+
+TimeObserver Method: removeTime {#TimeObserver:removeTime}
+----------------------------------------------
+Removes the time from the stack.
+
+### Syntax
+    to.removeTime(time);
+    
+### Arguments
+1. time - (mixed) either a Date or a timestamp of the wanted time

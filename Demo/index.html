@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>TimeObserver Demo</title>
+    <style type="text/css">
+    
+    </style>
+</head>
+<body>
+    <h1>TimeObserver Demo</h1>
+    <p>Wait for a minute for a timed event to fire</p>
+	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools-yui-compressed.js'></script>
+    <script type="text/javascript" src="../Source/TimeObserver.js"></script>
+    <script type="text/javascript">
+    //<![CDATA[
+        var to = new TimeObserver;
+        
+        to.addTime(+(new Date()) + 30000, function(){alert('30 secs have passed');});
+        to.start();
+    //]]>
+    </script>
+</body>
+</html>
