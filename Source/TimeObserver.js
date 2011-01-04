@@ -7,9 +7,6 @@ license: MIT-style
 authors:
 - Arieh Glazer
 
-requires:
-- core/1.3: [Class]
-
 provides: [TimeObserver]
 
 ...
@@ -35,11 +32,21 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE 
 */
-(function(window,$,undef){
+
+(function(){
+
+/* For non Moo usages */
+if (!Class){
+    var Class = function(params){
+        function F(){};
+        F.prototype = params;
+        return F;
+    }
+}
 
 var TimeObserver = this.TimeObserver = new Class({
     on : false
-    ,handles: {}
+    , handles: {}
     , stack: {}
     , start: function() {
         var current = +new Date(), k;
@@ -70,4 +77,4 @@ var TimeObserver = this.TimeObserver = new Class({
     }
 });
 
-})(this,document.id);
+}).apply(window);
